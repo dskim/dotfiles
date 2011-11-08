@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+#
+# Symlinks only the dotfiles to the home folder of the user 
+list = Dir.new('.').entries.select { |n| /^\.[^.]/.match(n) }
+
+list.each do |fn|
+  source = "#{Dir.getwd}/#{fn}"
+  target = "#{Dir.home}/#{fn}"
+
+  if FileTest.file?(target)
+    puts "File: #{target} already exists"
+  elsif FileTest.file?(source)
+    puts "Symlinking #{source} to #{target}."
+    `ln -s #{source} #{target}` 
+  else
+    # ignore
+  end
+end
+
+puts 'Done!'
