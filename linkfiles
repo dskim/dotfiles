@@ -5,7 +5,7 @@ list = Dir.new('.').entries.select { |n| /^\.[^.]/.match(n) }
 
 list.each do |fn|
   source = "#{Dir.getwd}/#{fn}"
-  target = "#{Dir.home}/#{fn}"
+  target = "#{File.expand_path('~')}/#{fn}"
 
   if FileTest.file?(target)
     puts "File: #{target} already exists"
