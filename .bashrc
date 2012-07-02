@@ -14,6 +14,8 @@ HISTSIZE=2000
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
 # Load personal aliases
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
