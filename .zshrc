@@ -11,7 +11,7 @@ export ZSH_THEME="dskim"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -31,12 +31,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # Imported from bashrc
-export PATH="/usr/local/bin:$PATH"
-
-export EDITOR=vi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Load personal aliases
