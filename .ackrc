@@ -1,15 +1,1 @@
---type-set
-haml=.haml
-
---type-set
-sass=.sass
-
---type-set
-sass=.scss
-
---type-set
-coffeescript=.coffee
-
---type-set
-cucumber=.feature
-
+--all-types
