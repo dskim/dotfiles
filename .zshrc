@@ -24,7 +24,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew git rvm gem bundler heroku)
+plugins=(brew git gem bundler heroku)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -33,8 +33,4 @@ source $ZSH/oh-my-zsh.sh
 # Imported from bashrc
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-# Load personal aliases
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
-
+eval "$(rbenv init -)"
