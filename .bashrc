@@ -17,3 +17,6 @@ HISTSIZE=2000
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
+
+# added by travis gem
+[ -f /Users/dskim/.travis/travis.sh ] && source /Users/dskim/.travis/travis.sh
