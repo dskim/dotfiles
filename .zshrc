@@ -1,7 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-export PATH="$HOME/.rbenv/bin:$PATH"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -24,7 +23,7 @@ DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew git gem bundler rails tmuxinator docker docker-compose)
+plugins=(brew git gem bundler rails tmuxinator docker docker-compose fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -33,12 +32,18 @@ source $ZSH/oh-my-zsh.sh
 # disable history sharing between sessions
 unsetopt share_history
 
-. $HOME/.asdf/asdf.sh
+# load asdf
+. $(brew --prefix asdf)/libexec/asdf.sh
+export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 
-. $HOME/.asdf/completions/asdf.bash
+# Added by GDK bootstrap
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:${PKG_CONFIG_PATH}"
 
-eval "$(rbenv init -)"
+# Added by GDK bootstrap
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1 --with-readline-dir=/usr/local/opt/readline"
+export PATH="/usr/local/sbin:$PATH"
 
-# added by travis gem
-[ -f /Users/dskim/.travis/travis.sh ] && source /Users/dskim/.travis/travis.sh
-export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+alias vi="nvim"

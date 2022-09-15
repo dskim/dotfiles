@@ -1,3 +1,4 @@
+--ignore-dir=.git
 --ignore-dir=public/assets
 --ignore-dir=vendor
 --ignore-dir=log
